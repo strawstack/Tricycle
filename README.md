@@ -37,9 +37,9 @@ With the code below, the `class` and `text content` of the div are bound to resp
 
 # Computed Props
 
-Computed props are `just like regular data` only their `value` must be a `function`. Computed props cannot be assigned to but, rather, they are computed automatically when regular props change. In the example, below when `className` or `textContent` is updated the computed prop will update as well!
+Computed props are `just like regular data` only their `value` must be a `function`. Computed props cannot be assigned too but, rather, they are computed automatically when regular props change. In the example, below, when `className` or `textContent` is updated, the computed prop will update as well!
 
-Note, inside the function for a computed prop the `this` keyword is a ref to the data object, so all properties of the `data` obj can be accessed via `this.property_name`
+Note, inside the function for a computed prop, the `this` keyword is a ref to the data object, so all properties of the `data` obj can be accessed via `this.property_name`
 
 ```html
 <head>
