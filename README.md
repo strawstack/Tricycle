@@ -26,8 +26,8 @@ With the code below, the `class` and `text content` of the div are bound to resp
             }
         });    
 
-        // Edit the data properties inside app like so
-        // and changes are reflected in realtime
+        // Edit data properties here, or in the console
+        // Changes are reflected in realtime!
         app.className = "title-area";
         app.textContent = "Inspired by VueJS";
 
