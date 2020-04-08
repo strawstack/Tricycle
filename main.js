@@ -12,7 +12,13 @@ function main() {
             item3: "orange juice",
             item1Class: "",
             item2Class: "",
-            item3Class: ""
+            item3Class: "",
+            computedClass: function () {
+                return this.titleClass + " " + this.textClass;
+            },
+            computedContent: function () {
+                return this.item1 + " and " + this.item2;
+            }
         }
     });
 

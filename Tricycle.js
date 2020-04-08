@@ -3,9 +3,20 @@ class Tricycle {
         this.root = config.root;
         this.data = config.data;
 
+        // Map prop name to HTML element ref
         let classMap = {};
         let contentMap = {};
 
+        // Map from computed prop to cached value
+        let computedProps = {};
+        for (let prop in this.data) {
+            let value = this.data[prop];
+            if (typeof value === 'function') {
+                computedProps[prop] = value.call(this.data);
+            }
+        }
+
+        // For each element, discover template values
         let html = document.querySelector(this.root);
         let elems = html.querySelectorAll("*");
         for (let elem of elems) {
@@ -29,6 +40,7 @@ class Tricycle {
             }
         }
 
+        // Place value at the bound HTML element
         let updateHTML = (prop, value) => {
             if (prop in classMap) {
                 for (let elem of classMap[prop]) {
@@ -42,17 +54,40 @@ class Tricycle {
             }
         };
 
-        // init properties
+        // Recompute all computed props and update HTML accordingly
+        let computePropsAndUpdate = () => {
+            for (let prop in computedProps) {
+                computedProps[prop] = this.data[prop].call(this.data);
+                updateHTML(prop, computedProps[prop]);
+            }
+        };
+
+        // init properties once
         for (let prop in this.data) {
             let value = this.data[prop];
+
+            // Get cached value for computed props
+            if (prop in computedProps) {
+                value = computedProps[prop];
+            }
+
             updateHTML(prop, value);
         }
 
         const handler = {
             set(obj, prop, value) {
-                //console.log("obj:", obj, ", prop:", prop, ", value:", value);
+
+                // Don't assign to computed props
+                if (!(prop in computedProps)) {
+                    obj[prop] = value;
+                } else {
+                    console.log("Cannot assign new value to computed prop");
+                }
+
+                // Calculate and update computed props
+                computePropsAndUpdate();
+
                 updateHTML(prop, value);
-                obj[prop] = value;
             }
         };
 
