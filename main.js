@@ -1,5 +1,7 @@
+let app;
+
 function main() {
-    let app = new Tricycle({
+    app = new Tricycle({
         root: "#app",
         data: {
             titleClass: "title-area",
