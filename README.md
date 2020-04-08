@@ -1,6 +1,6 @@
 # TriCycle
 
-Three wheels and a set of handle bars is all you need to learn to ride a bike. Tricycle is a template and a one-way binding
+Three wheels and a set of handle bars is all you need to learn to ride a bike. Tricycle is a template library that performs one-way data binding to a Javascript object
 
 # Live Demo
 
