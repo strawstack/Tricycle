@@ -10,7 +10,7 @@ Three wheels and a set of handle bars is all you need to learn to ride a bike. T
 
 With the code below, the `class` and `text content` of the div are bound to respective variables
 
-```
+```html
 <head>
     <script src="Tricycle.js"></script>
 </head>
