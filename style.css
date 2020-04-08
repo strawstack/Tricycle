@@ -1,0 +1,34 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+#app {
+    padding: 20px;
+}
+.grey-background {
+    background: grey;
+}
+.all-caps {
+    text-transform: uppercase;
+}
+.flip {
+    transform: scale(1, -1);
+}
+.font-one {
+    font-family: 'Ubuntu';
+}
+.font-two {
+    font-family: 'Courier';
+}
+.tiny {
+    font-size: 0.8rem;
+}
+.large {
+    font-size: 1.4rem;
+}
+.medium {
+    font-size: 1.1rem;
+}
